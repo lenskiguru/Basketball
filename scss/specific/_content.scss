@@ -1,0 +1,176 @@
+  .container {
+    margin: 3rem auto;
+    width: 300px;
+    height: 300px;
+    background: url('../../images/grass.jfif')center center/cover;
+    background-repeat: repeat;
+    position: relative;    
+    min-width: 1200px;
+    min-height: 800px;
+  }
+  
+  .basketball {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .basketball span {
+    display: block;
+    background: url('../../images/basketball.png') no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  @keyframes flyToChild1 {
+    0% {
+        left: calc(100% - 600px);
+        top: calc(100% - 350px);
+      transform: rotate(0deg);
+    }
+    100% {
+        left: 150px;
+        top: 100px;
+      transform: rotate(-45deg); /* Adjust the rotation to face Child 1 */
+    }
+  }
+  
+  @keyframes flyToChild2 {
+    0% {
+      left: 150px; /* Position of Child 1 */
+      top: 100px;
+      transform: rotate(-45deg);
+    }
+    100% {
+      left: 550px; /* Position of Child 2 */
+      top: 150px;
+      transform: rotate(45deg); /* Adjust the rotation to face Child 2 */
+    }
+  }
+  
+  @keyframes flyToChild3 {
+    0% {
+      left: 550px; /* Position of Child 2 */
+      top: 150px;
+      transform: rotate(45deg);
+    }
+    100% {
+      left: calc(100% - 600px); /* Position of Child 3 */
+      top: calc(100% - 350px);
+      transform: rotate(90deg); /* Adjust the rotation to face Child 3 */
+    }
+  }
+  
+  @keyframes flyToChild4 {
+    0% {
+      left: calc(100% - 600px); /* Position of Child 3 */
+      top: calc(100% - 350px);
+      transform: rotate(90deg);
+    }
+    100% {
+      left: 200px; /* Position of Child 4 */
+      top: calc(100% - 300px);
+      transform: rotate(135deg); /* Adjust the rotation to face Child 4 */
+    }
+  }
+  
+  .basketball {
+    animation: flyToChild1 3s ease-in-out 0s forwards,
+               flyToChild2 3s ease-in-out 3s forwards,
+               flyToChild3 3s ease-in-out 6s forwards,
+               flyToChild4 3s ease-in-out 9s forwards,
+               reset 0s 12s forwards infinite;
+  }
+  
+  @keyframes reset {
+    0% {
+        left: 200px;
+        top: calc(100% - 300px);
+      transform: rotate(135deg);
+      opacity: 1;
+    }
+    100% {
+        left: 200px;
+        top: calc(100% - 300px);
+      transform: rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  .child1, .child2, .child3, .child4 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+  }
+  
+  .child1 {
+    background: url('../../images/child1.png') no-repeat center center/cover;
+    left: 150px;
+    top: 100px;
+  }
+  
+  .child2 {
+    background: url('../../images/child2.png') no-repeat center center/cover;
+    left: 550px;
+    top: 150px;
+
+  }
+  
+  .child3 {
+    background: url('../../images/child3.png') no-repeat center center/cover;
+    left: calc(100% - 600px);
+    top: calc(100% - 350px);
+  }
+  
+  .child4 {
+    background: url('../../images/child4.png') no-repeat center center/cover;
+    left: 200px;
+    top: calc(100% - 300px);
+  }
+  
+.invitation {
+    margin: 2rem auto;
+    font-size: 5rem;
+    text-align: center;
+    color: $primary-color;
+    font-family: $primary-font;
+    font-weight: 800;
+    border: 1px solid black;
+    width: 1165px;
+}
+
+.info {
+    margin: 10px auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.question {
+    width: 1165px;
+    position: absolute;
+    font-family: $secondary-font;
+    font-size: 80px;
+    width: 800;
+    text-align: center;
+    top: calc(100% - 460px);
+    transition: transform 0.2s;
+
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $secondary-color;
+        display: inline-block;
+        transition: transform 0.2s, color 0.2s ease-in-out;
+
+        &:hover {
+            color: black;
+            transform: scale(1.2); /* Adjust scale to a more reasonable size */
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use 'sass:math';
+
+// colors
+$global-bg: #E4E4E4;
+$logo-bg: #ff4486;
+$logo-color: #fff;
+$btn-bg1: black;
+$btn-color1: yellow;
+$btn-bg2: red;
+$btn-color2: white;
+$primary-color: rgb(14, 80, 19);
+$secondary-color: white;
+
+// spacing
+$global-width: 990px;
+$global-border-radius: 0.25em;
+$spacing: 1rem;
+$columns: 12;
+$column-base-width: math.div(100%, $columns);
+
+// buttons
+$btn-spacing: $spacing 2 * $spacing;
+$btn-border-radius: $global-border-radius;
+$btn-primary-color: $btn-color1;
+$btn-primary-bg: $btn-bg1;
+$btn-secondary-color: $btn-color2;
+$btn-secondary-bg: $btn-bg2;
