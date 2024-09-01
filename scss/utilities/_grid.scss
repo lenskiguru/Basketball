@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    max-width: $global-width;
+    margin: 0 auto;
+    padding: 0 $spacing;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    [class*="col-"] {
+        min-height: 1px;
+        padding: 0 $spacing;
+        width: 100%;
+    }
+
+    @for $i from 1 through $columns {
+        .col-all-#{$i} {
+            width: $column-base-width * $i;
+        }
+    }
+
+    @include tablet {
+        @for $i from 1 through $columns {
+            .col-#{$i} {
+                width: $column-base-width * $i;
+            }
+        }
+    }
+}

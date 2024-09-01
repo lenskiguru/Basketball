@@ -1,0 +1,19 @@
+.btn {
+
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: $btn-spacing;
+    border-radius: $btn-border-radius;
+
+    &-primary {
+        color: $btn-primary-color;
+        background-color: $btn-primary-bg;
+    }
+
+    &-secondary {
+        color: $btn-secondary-color;
+        background-color: $btn-secondary-bg;
+    }
+
+}
